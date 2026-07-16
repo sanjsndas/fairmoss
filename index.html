@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairmoss Thorn Pavilion — Cultivation Meets Craft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Reset & Base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8F5F0;
+            color: #1E352F;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ---------- Typography ---------- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- Layout & Container ---------- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- Navigation (Hideaway Style) ---------- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(30, 53, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            font-weight: 450;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4A373;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #D4A373;
+        }
+
+        .nav-cta {
+            background: #D4A373;
+            color: #1E352F;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .nav-cta:hover::after {
+            width: 0 !important;
+        }
+
+        /* ---------- 1. The Threshold (Hero) ---------- */
+        .hero-threshold {
+            margin-top: 80px;
+            background: #1E352F;
+            padding: 5rem 0 4rem;
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-quote {
+            font-family: "Fraunces", serif;
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .hero-quote em {
+            color: #D4A373;
+            font-style: italic;
+        }
+        .hero-image {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6);
+            background: #9C7A64;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F5F0;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Seasonal Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .pillar-item {
+            background: rgba(255,255,255,0.04);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-radius: 2px;
+            border-bottom: 2px solid #D4A373;
+            transition: background 0.25s;
+            color: #F8F5F0;
+        }
+        .pillar-item:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        .pillar-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .pillar-item p {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        /* ---------- 2. The Conservatory (Split Screen) ---------- */
+        .conservatory {
+            padding: 5rem 0;
+            background: #F8F5F0;
+        }
+        .split-screen {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+        .editor-picks {
+            border-right: 1px solid #e0d8cd;
+            padding-right: 2rem;
+        }
+        .editor-picks h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+        .pick-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e8e1d6;
+        }
+        .pick-item:last-child {
+            border-bottom: 0;
+        }
+        .pick-item .meta {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #9C7A64;
+        }
+        .pick-item h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 0.2rem 0 0.2rem;
+        }
+        .pick-item p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .featured-card {
+            background: #F8F5F0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px -8px rgba(30, 53, 47, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(30, 53, 47, 0.2);
+        }
+        .featured-card .card-img {
+            height: 200px;
+            background: #9C7A64;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F5F0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .featured-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .featured-card .card-body {
+            padding: 1.8rem 2rem;
+        }
+        .featured-card .card-body .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9C7A64;
+            border: 1px solid #d4c9bc;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+        .featured-card .card-body h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .featured-card .card-body p {
+            opacity: 0.8;
+        }
+
+        /* ---------- 3. The Root Cellar (Series) ---------- */
+        .root-cellar {
+            background: #1E352F;
+            padding: 5rem 0;
+            color: #F8F5F0;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+        }
+        .section-header a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #D4A373;
+        }
+        .series-carousel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .series-item {
+            background: rgba(255,255,255,0.04);
+            padding: 2rem 1.8rem;
+            border-radius: 4px;
+            border-left: 3px solid #D4A373;
+        }
+        .series-item .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .series-item h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        .series-item .progress {
+            margin-top: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            height: 4px;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .series-item .progress .bar {
+            height: 4px;
+            border-radius: 4px;
+            background: #D4A373;
+            width: 60%;
+        }
+
+        /* ---------- 4. The Arboretum (Category Grid) ---------- */
+        .arboretum {
+            padding: 5rem 0;
+            background: #C5D1C5;
+        }
+        .arboretum .section-header h2 {
+            color: #1E352F;
+        }
+        .category-masonry {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .category-card {
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            color: #1E352F;
+            transition: all 0.3s ease;
+            background: #F8F5F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .category-card:nth-child(1) { background: #E8DFD5; }
+        .category-card:nth-child(2) { background: #D9CBBF; }
+        .category-card:nth-child(3) { background: #E2D4C8; }
+        .category-card:nth-child(4) { background: #C5D1C5; }
+        .category-card:nth-child(5) { background: #d4c9bc; grid-column: span 2; }
+        .category-card:nth-child(6) { background: #b8aa9b; color: #F8F5F0; }
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+        .category-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .category-card p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.4rem;
+        }
+
+        /* ---------- 5. The Greenhouse (Recent Growth) ---------- */
+        .greenhouse {
+            padding: 5rem 0;
+            background: #F8F5F0;
+        }
+        .tri-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+        .tri-card .card {
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.06);
+        }
+        .tri-card .card:nth-child(1) {
+            border-radius: 40px 6px 40px 6px;
+            background: #F8F5F0;
+            border: 1px solid #e0d8cd;
+        }
+        .tri-card .card:nth-child(2) {
+            border-radius: 6px 40px 6px 40px;
+            background: #C5D1C5;
+            color: #1E352F;
+        }
+        .tri-card .card:nth-child(3) {
+            border-radius: 0 0 30px 0;
+            box-shadow: 12px 12px 0 rgba(30, 53, 47, 0.05);
+        }
+        .tri-card .card .card-content {
+            padding: 2rem 1.8rem;
+        }
+        .tri-card .card .card-content .label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9C7A64;
+        }
+        .tri-card .card .card-content h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 0.3rem 0;
+        }
+        .tri-card .card .card-content p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ---------- 6. The Garden Shed (Newsletter) ---------- */
+        .garden-shed {
+            background: #2b423a;
+            padding: 4rem 0;
+            color: #F8F5F0;
+        }
+        .shed-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .shed-grid h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+        }
+        .shed-grid p {
+            opacity: 0.75;
+            margin: 0.5rem 0 1.5rem;
+            max-width: 80%;
+        }
+        .shed-grid input {
+            padding: 0.8rem 1.2rem;
+            border: 0;
+            border-radius: 40px;
+            width: 60%;
+            margin-right: 0.5rem;
+            background: #F8F5F0;
+            color: #1E352F;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .shed-grid button {
+            background: #D4A373;
+            border: 0;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1E352F;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .shed-grid button:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .shed-tools {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+        }
+        .shed-tools span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.6;
+            border-bottom: 1px dotted rgba(255,255,255,0.2);
+            padding-bottom: 4px;
+        }
+
+        /* ---------- Footer (Split-Stack) ---------- */
+        .site-footer {
+            background: #14241f;
+            color: #a8b8b0;
+            padding: 3rem 0 2rem;
+        }
+        .footer-principles {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-principles a {
+            font-family: "Fraunces", serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+        .footer-principles a:hover {
+            color: #D4A373;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+        .footer-links h4 {
+            color: #F8F5F0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links ul li a {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            opacity: 0.4;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .pillars-grid { grid-template-columns: repeat(2,1fr); }
+            .split-screen { grid-template-columns: 1fr; }
+            .editor-picks { border-right: 0; padding-right: 0; }
+            .category-masonry { grid-template-columns: repeat(2,1fr); }
+            .tri-card { grid-template-columns: 1fr; }
+            .shed-grid { grid-template-columns: 1fr; }
+            .footer-links { grid-template-columns: repeat(2,1fr); }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero-quote { font-size: 2.2rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .category-masonry { grid-template-columns: 1fr; }
+            .category-card:nth-child(5) { grid-column: span 1; }
+            .shed-grid input { width: 100%; margin-bottom: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+					 <li><a href="categories.html">CATEGORIES</a></li>
+					<li><a href="disclamier.html">DISCLAMIER</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. The Threshold -->
+    <section class="hero-threshold">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-quote">
+                    “The garden is a <em>pavilion</em> of patience,<br> 
+                    where every thorn tells a story.”
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%239C7A64'/%3E%3Ctext x='50%25' y='50%25' font-family='Fraunces, serif' font-size='18' fill='%23F8F5F0' text-anchor='middle' dominant-baseline='central'%3E%3C%2Ftext%3E%3C/svg%3E" alt="Fairmoss Thorn Pavilion Hero Image of a sculptural garden">
+                </div>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-item"><h3>Soil Health</h3><p>Foundation of the ecosystem</p></div>
+                <div class="pillar-item"><h3>Pruning</h3><p>The art of careful removal</p></div>
+                <div class="pillar-item"><h3>Propagation</h3><p>Creating new life</p></div>
+                <div class="pillar-item"><h3>Pest Control</h3><p>Balanced defense</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. The Conservatory -->
+    <section class="conservatory">
+        <div class="container">
+            <div class="split-screen">
+                <div class="editor-picks">
+                    <h2>Editor’s Picks</h2>
+                    <div class="pick-item">
+                        <span class="meta">Deep Dive</span>
+                        <h4>Building a No-Dig Garden</h4>
+                        <p>Why disturbing the soil is the biggest mistake you can make.</p>
+                    </div>
+                    <div class="pick-item">
+                        <span class="meta">Tool Guide</span>
+                        <h4>Essential Pruners for Every Hand</h4>
+                        <p>From bypass to anvil, find your perfect match.</p>
+                    </div>
+                    <div class="pick-item">
+                        <span class="meta">Plant Profile</span>
+                        <h4>The Resilience of the Thorn</h4>
+                        <p>Plants that protect themselves and inspire us.</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="card-img">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='200' viewBox='0 0 600 200'%3E%3Crect width='600' height='200' fill='%23D4A373'/%3E%3Ctext x='50%25' y='50%25' font-family='Fraunces, serif' font-size='16' fill='%231E352F' text-anchor='middle' dominant-baseline='central'%3EFeatured Article Image%3C%2Ftext%3E%3C/svg%3E" alt="Featured Article">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag">Masterclass</span>
+                        <h3>Grafting: The Ancient Art of Union</h3>
+                        <p>Unlock the secrets of combining two plants into one. A step-by-step guide to creating stronger, more resilient cultivars.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. The Root Cellar -->
+    <section class="root-cellar">
+        <div class="container">
+            <div class="section-header">
+                <h2>Deep Dives</h2>
+                <a href="#">View all series →</a>
+            </div>
+            <div class="series-carousel">
+                <div class="series-item">
+                    <div class="icon">🌱</div>
+                    <h3>Composting Mastery</h3>
+                    <p>From kitchen scraps to black gold.</p>
+                    <div class="progress"><div class="bar" style="width:80%"></div></div>
+                </div>
+                <div class="series-item">
+                    <div class="icon">🌿</div>
+                    <h3>Water-Wise Gardening</h3>
+                    <p>Thriving in a drier climate.</p>
+                    <div class="progress"><div class="bar" style="width:45%"></div></div>
+                </div>
+                <div class="series-item">
+                    <div class="icon">🌸</div>
+                    <h3>Perennial Design</h3>
+                    <p>Building a garden that lasts.</p>
+                    <div class="progress"><div class="bar" style="width:20%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. The Arboretum -->
+    <section class="arboretum">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore the Grounds</h2>
+                <a href="#">All categories →</a>
+            </div>
+            <div class="category-masonry">
+                <div class="category-card"><h3>🌳 Trees & Shrubs</h3><p>The backbone of the garden.</p></div>
+                <div class="category-card"><h3>🌼 Perennials</h3><p>Reliable, returning beauty.</p></div>
+                <div class="category-card"><h3>🥬 Edibles</h3><p>From seed to table.</p></div>
+                <div class="category-card"><h3>🧰 Tools</h3><p>Essentials for the craft.</p></div>
+                <div class="category-card"><h3>🏡 Garden Design</h3><p>Creating outdoor rooms.</p></div>
+                <div class="category-card"><h3>🌎 Ecology</h3><p>Gardening with nature.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. The Greenhouse -->
+    <section class="greenhouse">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Growth</h2>
+                <a href="#">The Archive →</a>
+            </div>
+            <div class="tri-card">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="label">Field Note</span>
+                        <h4>Mycorrhizal Networks</h4>
+                        <p>How fungi connect and support your plants in ways you can't see.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="label">Seed Packet</span>
+                        <h4>Heirloom Tomato Varieties</h4>
+                        <p>Preserving flavor and history in your backyard.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="label">Pressed Specimen</span>
+                        <h4>Leaf Anatomy & Function</h4>
+                        <p>A deep look at the powerhouse of the plant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. The Garden Shed -->
+    <section class="garden-shed">
+        <div class="container">
+            <div class="shed-grid">
+                <div>
+                    <h2>Join the Pavilion</h2>
+                    <p>Get weekly insights, tools, and deep dives delivered to your digital doorstep.</p>
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+                <div class="shed-tools">
+                    <span>📋 Guides</span>
+                    <span>📊 Charts</span>
+                    <span>📅 Planner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-principles">
+                <a href="#">Read the Fairmoss Principles</a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Pavilion</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Fairmoss Thorn Pavilion</span>
+                <span>Editorial Policy</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

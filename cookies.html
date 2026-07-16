@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy · Fairmoss Thorn Pavilion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8F5F0;
+            color: #1E352F;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- Navigation (consistent) ---------- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(30, 53, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            font-weight: 450;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4A373;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #D4A373;
+        }
+
+        .nav-cta {
+            background: #D4A373;
+            color: #1E352F;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .nav-cta:hover::after {
+            width: 0 !important;
+        }
+
+        /* ---------- Privacy hero ---------- */
+        .privacy-threshold {
+            margin-top: 80px;
+            background: #1E352F;
+            padding: 4rem 0 2.5rem;
+            color: #F8F5F0;
+            border-bottom: 2px solid #D4A373;
+        }
+        .privacy-threshold h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        .privacy-threshold p {
+            opacity: 0.8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-top: 0.5rem;
+        }
+
+        /* ---------- Privacy content ---------- */
+        .privacy-content {
+            padding: 3.5rem 0 5rem;
+        }
+        .privacy-content .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.8rem 3.2rem;
+            box-shadow: 0 12px 30px -12px rgba(30, 53, 47, 0.08);
+            margin-bottom: 2.5rem;
+        }
+        .privacy-content .card:last-child {
+            margin-bottom: 0;
+        }
+        .privacy-content h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            border-left: 4px solid #D4A373;
+            padding-left: 1.2rem;
+        }
+        .privacy-content p {
+            margin-bottom: 1.2rem;
+            color: #2d433c;
+        }
+        .privacy-content p:last-child {
+            margin-bottom: 0;
+        }
+        .privacy-content ul {
+            margin: 1.2rem 0 1.5rem 1.8rem;
+            color: #2d433c;
+        }
+        .privacy-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .privacy-content .highlight {
+            background: #F8F5F0;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            border-left: 4px solid #D4A373;
+            margin: 1.8rem 0;
+            font-size: 0.95rem;
+        }
+        .privacy-content .highlight strong {
+            color: #1E352F;
+        }
+
+        .small-print {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 2rem;
+            border-top: 1px solid #e0d8cd;
+            padding-top: 1.5rem;
+        }
+
+        /* ---------- Footer (consistent) ---------- */
+        .site-footer {
+            background: #14241f;
+            color: #a8b8b0;
+            padding: 3rem 0 2rem;
+        }
+        .footer-principles {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-principles a {
+            font-family: "Fraunces", serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+        .footer-principles a:hover {
+            color: #D4A373;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+        .footer-links h4 {
+            color: #F8F5F0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links ul li a {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            opacity: 0.4;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .privacy-content .card {
+                padding: 2rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            .privacy-threshold h1 {
+                font-size: 2.2rem;
+            }
+            .privacy-content .card {
+                padding: 1.8rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+            }
+            .privacy-content h2 {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (exact same as original) -->
+    <nav class="site-nav">
+        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html" style="color:#D4A373;">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="categories.html">CATEGORIES</a></li>
+          <li><a href="disclamier.html">DISCLAMIER</a></li>
+        </ul>
+    </nav>
+
+    <!-- Privacy Hero -->
+    <section class="privacy-threshold">
+        <div class="container">
+            <h1>Privacy & the Pavilion</h1>
+            <p>How we tend to your data with the same care we give to the garden.</p>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <div class="container privacy-content">
+        <div class="card">
+            <h2>Our rooted approach</h2>
+            <p>At Fairmoss Thorn Pavilion, we believe that privacy is not a policy — it is a promise. We handle your information with the same patience and attention we give to heirloom seeds. This notice explains what we collect, why we collect it, and how we protect it.</p>
+            <div class="highlight">
+                <strong>🌱 In short:</strong> We collect only what is needed to share stories, improve our garden, and send you the occasional note. We never sell or rent your data.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Information we gather</h2>
+            <p>We may collect the following types of information when you interact with the Pavilion:</p>
+            <ul>
+                <li><strong>Correspondence</strong> — your name, email address, and message when you contact us via the contact form or newsletter.</li>
+                <li><strong>Usage</strong> — basic analytics (pages visited, time spent) to understand what resonates with our community.</li>
+                <li><strong>Preferences</strong> — if you subscribe, we note your interests to tailor our seasonal notes.</li>
+            </ul>
+            <p>We do not collect sensitive data, and we never ask for more than what is needed for a gracious conversation.</p>
+        </div>
+
+        <div class="card">
+            <h2>How we use your information</h2>
+            <ul>
+                <li>To reply to your messages and inquiries.</li>
+                <li>To send you garden notes, if you have subscribed.</li>
+                <li>To improve the Pavilion experience — we listen to what you read and enjoy.</li>
+                <li>To protect the garden against misuse or spam.</li>
+            </ul>
+            <p>We will never use your data for automated decision-making or profiling.</p>
+        </div>
+
+        <div class="card">
+            <h2>Sharing & third parties</h2>
+            <p>We do not sell, trade, or rent your personal information. We may share limited data with trusted partners who help us operate the Pavilion (such as email delivery services), but only under strict confidentiality agreements. These partners are not permitted to use your data for any other purpose.</p>
+            <p>We may also disclose information if required by law, but only when we are satisfied that the request is lawful and proper.</p>
+        </div>
+
+        <div class="card">
+            <h2>Your choices & rights</h2>
+            <p>You are always in control of your data. You can:</p>
+            <ul>
+                <li>Unsubscribe from our letters at any time — every email includes a link to withdraw.</li>
+                <li>Request access to the personal data we hold about you.</li>
+                <li>Ask us to correct or delete your information.</li>
+            </ul>
+            <p>To exercise any of these rights, simply <a href="contact.html" style="color:#D4A373; font-weight:500;">send word to the Pavilion</a> and we will respond within two sunrises.</p>
+        </div>
+
+        <div class="card">
+            <h2>Data security & retention</h2>
+            <p>We store your information securely and limit access to those who need it to tend to the Pavilion. We retain your data only as long as necessary to fulfill the purposes outlined here, or as required by law. If you have not interacted with us for two years, we will quietly let your data return to the soil — unless you ask us to keep it.</p>
+        </div>
+
+        <div class="card">
+            <h2>Cookies & small seeds</h2>
+            <p>We use minimal cookies to remember your preferences and to understand how the garden is visited. You can manage cookie preferences in your browser settings. For a deeper look, see our <a href="cookies.html" style="color:#D4A373; font-weight:500;">Cookies Policy</a>.</p>
+        </div>
+
+        <div class="card">
+            <h2>Changes to this notice</h2>
+            <p>We may update this privacy notice occasionally to reflect changes in practice or regulation. When we do, we will update the date below and invite you to review it. Your continued presence in the Pavilion tells us you are comfortable with the current notice.</p>
+            <p class="small-print">Last revised: April 2026 · Fairmoss Thorn Pavilion</p>
+        </div>
+    </div>
+
+    <!-- Footer (consistent) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-principles">
+                <a href="#">Read the Fairmoss Principles</a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Pavilion</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Fairmoss Thorn Pavilion</span>
+                <span>Editorial Policy</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

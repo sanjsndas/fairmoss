@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Fairmoss Thorn Pavilion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8F5F0;
+            color: #1E352F;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- Navigation (consistent) ---------- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(30, 53, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            font-weight: 450;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4A373;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #D4A373;
+        }
+
+        .nav-cta {
+            background: #D4A373;
+            color: #1E352F;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .nav-cta:hover::after {
+            width: 0 !important;
+        }
+
+        /* ---------- Contact hero ---------- */
+        .contact-threshold {
+            margin-top: 80px;
+            background: #1E352F;
+            padding: 4rem 0 3rem;
+            color: #F8F5F0;
+            border-bottom: 2px solid #D4A373;
+        }
+        .contact-threshold h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        .contact-threshold p {
+            opacity: 0.8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-top: 0.5rem;
+        }
+
+        /* ---------- Contact grid ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 3rem;
+            padding: 4rem 0 5rem;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2.5rem 2.8rem;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px -8px rgba(30, 53, 47, 0.08);
+        }
+        .contact-form h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .contact-form .sub {
+            color: #5f6f68;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+            color: #2b423a;
+            margin-bottom: 0.4rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #d4c9bc;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #F8F5F0;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #D4A373;
+            box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+        }
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .btn-submit {
+            background: #1E352F;
+            color: #F8F5F0;
+            border: 0;
+            padding: 0.9rem 2.5rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 0.5rem;
+        }
+        .btn-submit:hover {
+            background: #D4A373;
+            color: #1E352F;
+        }
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+
+        /* ---------- Sidebar / Pavilion details ---------- */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .info-card {
+            background: #fff;
+            padding: 2rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px -10px rgba(0,0,0,0.04);
+            border-left: 4px solid #D4A373;
+        }
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .info-card p, .info-card address {
+            font-style: normal;
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .info-card .detail {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .info-card .detail strong {
+            color: #1E352F;
+            font-weight: 600;
+        }
+
+        .garden-hours {
+            background: #F8F5F0;
+            padding: 1.5rem 1.8rem;
+            border-radius: 12px;
+            border: 1px solid #e0d8cd;
+        }
+        .garden-hours h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #2b423a;
+            margin-bottom: 0.6rem;
+        }
+        .garden-hours ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+        .garden-hours ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px dotted rgba(0,0,0,0.05);
+        }
+        .garden-hours ul li:last-child {
+            border-bottom: 0;
+        }
+
+        .social-mini {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 0.8rem;
+        }
+        .social-mini a {
+            font-size: 0.9rem;
+            color: #1E352F;
+            opacity: 0.6;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        .social-mini a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+
+        /* ---------- Footer (consistent) ---------- */
+        .site-footer {
+            background: #14241f;
+            color: #a8b8b0;
+            padding: 3rem 0 2rem;
+        }
+        .footer-principles {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-principles a {
+            font-family: "Fraunces", serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+        .footer-principles a:hover {
+            color: #D4A373;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+        .footer-links h4 {
+            color: #F8F5F0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links ul li a {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            opacity: 0.4;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-sidebar {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .contact-sidebar > * {
+                flex: 1 1 200px;
+            }
+        }
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-threshold h1 {
+                font-size: 2.2rem;
+            }
+            .contact-form {
+                padding: 1.8rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+            }
+            .contact-sidebar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (exact same as original) -->
+    <nav class="site-nav">
+        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" style="color:#D4A373;">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="categories.html">CATEGORIES</a></li>
+          <li><a href="disclamier.html">DISCLAMIER</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-threshold">
+        <div class="container">
+            <h1>Send word to the Pavilion</h1>
+            <p>We welcome your questions, stories, and garden discoveries. Reach out — we’re rooted in conversation.</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Write to us</h2>
+                <p class="sub">We’ll reply within two sunrises.</p>
+                <form action="#" method="POST" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g. Rowan Green" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="general">General inquiry</option>
+                            <option value="collaboration">Collaboration & partnerships</option>
+                            <option value="press">Press & media</option>
+                            <option value="gardening">Gardening question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your garden, a question, or an idea…" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send</button>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="contact-sidebar">
+                <div class="info-card">
+                    <h3>📍 The Pavilion</h3>
+                    <address>
+                        Fairmoss Thorn Pavilion<br>
+                        142 Thorn Lane, Moss Valley<br>
+                        Evergreen County, EV9 2GH
+                    </address>
+                    <p class="detail"><strong>✉️</strong> <a href="mailto:hello@fairmossthorn.com">hello@fairmossthorn.com</a></p>
+                    <p class="detail"><strong>📞</strong> +44 (0) 20 7946 0238</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🌿 Garden Hours</h3>
+                    <div class="garden-hours">
+                        <ul>
+                            <li><span>Monday – Friday</span> <span>9:00 – 17:00</span></li>
+                            <li><span>Saturday</span> <span>10:00 – 16:00</span></li>
+                            <li><span>Sunday</span> <span>Closed (but we're in the soil)</span></li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 1.2rem;">
+                        <p style="font-size:0.85rem; opacity:0.7;">The garden is open to visitors by appointment. Please get in touch to arrange a walk.</p>
+                    </div>
+                </div>
+
+                <div class="info-card" style="border-left-color: #9C7A64;">
+                    <h3>📬 Stay rooted</h3>
+                    <p>Subscribe to our monthly letter — stories, sketches, and seasonal notes.</p>
+                    <div style="display: flex; margin-top: 0.8rem; gap: 0.4rem; flex-wrap: wrap;">
+                        <input type="email" placeholder="Your email" style="flex:1; padding:0.6rem 1rem; border-radius:40px; border:1px solid #d4c9bc; font-family:inherit; background:#F8F5F0; min-width:140px;">
+                        <button style="background:#D4A373; border:0; padding:0.6rem 1.5rem; border-radius:40px; font-weight:600; color:#1E352F; cursor:pointer; font-family:inherit;">Join</button>
+                    </div>
+                    <div class="social-mini">
+                        <a href="#">Instagram</a>
+                        <a href="#">Pinterest</a>
+                        <a href="#">Substack</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (consistent with original) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-principles">
+                <a href="#">Read the Fairmoss Principles</a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Pavilion</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Fairmoss Thorn Pavilion</span>
+                <span>Editorial Policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- tiny js to show a confirmation (just for demo) -->
+    <script>
+        (function() {
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for reaching out to the Pavilion. We’ll be in touch soon.');
+                    form.reset();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

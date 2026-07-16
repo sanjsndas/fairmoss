@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclaimer · Fairmoss Thorn Pavilion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8F5F0;
+            color: #1E352F;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- Navigation (consistent) ---------- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(30, 53, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            font-weight: 450;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4A373;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #D4A373;
+        }
+
+        .nav-cta {
+            background: #D4A373;
+            color: #1E352F;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .nav-cta:hover::after {
+            width: 0 !important;
+        }
+
+        /* ---------- Disclaimer hero ---------- */
+        .disclaimer-threshold {
+            margin-top: 80px;
+            background: #1E352F;
+            padding: 4rem 0 2.5rem;
+            color: #F8F5F0;
+            border-bottom: 2px solid #D4A373;
+        }
+        .disclaimer-threshold h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        .disclaimer-threshold p {
+            opacity: 0.8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-top: 0.5rem;
+        }
+
+        /* ---------- Disclaimer content ---------- */
+        .disclaimer-content {
+            padding: 3.5rem 0 5rem;
+        }
+        .disclaimer-content .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.8rem 3.2rem;
+            box-shadow: 0 12px 30px -12px rgba(30, 53, 47, 0.08);
+            margin-bottom: 2.5rem;
+        }
+        .disclaimer-content .card:last-child {
+            margin-bottom: 0;
+        }
+        .disclaimer-content h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.02em;
+            border-left: 4px solid #D4A373;
+            padding-left: 1.2rem;
+        }
+        .disclaimer-content p {
+            margin-bottom: 1.2rem;
+            color: #2d433c;
+        }
+        .disclaimer-content p:last-child {
+            margin-bottom: 0;
+        }
+        .disclaimer-content ul {
+            margin: 1.2rem 0 1.5rem 1.8rem;
+            color: #2d433c;
+        }
+        .disclaimer-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .disclaimer-content .highlight {
+            background: #F8F5F0;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            border-left: 4px solid #D4A373;
+            margin: 1.8rem 0;
+            font-size: 0.95rem;
+        }
+        .disclaimer-content .highlight strong {
+            color: #1E352F;
+        }
+
+        .small-print {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 2rem;
+            border-top: 1px solid #e0d8cd;
+            padding-top: 1.5rem;
+        }
+
+        /* ---------- Footer (consistent) ---------- */
+        .site-footer {
+            background: #14241f;
+            color: #a8b8b0;
+            padding: 3rem 0 2rem;
+        }
+        .footer-principles {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+        }
+        .footer-principles a {
+            font-family: "Fraunces", serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+        .footer-principles a:hover {
+            color: #D4A373;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+        .footer-links h4 {
+            color: #F8F5F0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links ul li a {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            opacity: 0.4;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .disclaimer-content .card {
+                padding: 2rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+            .disclaimer-threshold h1 {
+                font-size: 2.2rem;
+            }
+            .disclaimer-content .card {
+                padding: 1.8rem;
+            }
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+            }
+            .disclaimer-content h2 {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (exact same as original) -->
+    <nav class="site-nav">
+        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms.html">Terms Of Privacy</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="cookies.html">Cookies Policy</a></li>
+          <li><a href="categories.html">CATEGORIES</a></li>
+          <li><a href="disclaimer.html" style="color:#D4A373;">DISCLAIMER</a></li>
+        </ul>
+    </nav>
+
+    <!-- Disclaimer Hero -->
+    <section class="disclaimer-threshold">
+        <div class="container">
+            <h1>Disclaimer & the Pavilion</h1>
+            <p>Honest words, rooted in care — what you should know before you wander.</p>
+        </div>
+    </section>
+
+    <!-- Disclaimer Content -->
+    <div class="container disclaimer-content">
+        <div class="card">
+            <h2>General information</h2>
+            <p>The content on Fairmoss Thorn Pavilion is shared for informational and educational purposes only. While we tend to every word with thoughtfulness, we do not guarantee the completeness, accuracy, or reliability of any content. Gardens grow, and so do ideas — our pages may change as we learn.</p>
+            <div class="highlight">
+                <strong>🌿 Please note:</strong> Nothing on this site constitutes professional advice. For specific guidance — whether horticultural, legal, or financial — we encourage you to consult a qualified expert.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>External links & references</h2>
+            <p>We occasionally link to other gardens, archives, or resources we admire. These are offered for your convenience and curiosity. We do not control or endorse the content of external sites, and we are not responsible for their practices or policies.</p>
+            <ul>
+                <li><strong>No endorsement:</strong> A link does not imply affiliation, sponsorship, or approval.</li>
+                <li><strong>Use at your own risk:</strong> We encourage you to review the privacy and security policies of any third-party site you visit.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Opinions & voices</h2>
+            <p>The views expressed in articles, essays, and commentary are those of the individual authors and do not necessarily reflect the official stance of Fairmoss Thorn Pavilion. We celebrate diverse perspectives, and we invite thoughtful conversation.</p>
+            <p>We reserve the right to update, remove, or adjust any content as the seasons change.</p>
+        </div>
+
+        <div class="card">
+            <h2>No liability</h2>
+            <p>To the fullest extent permitted by law, Fairmoss Thorn Pavilion and its contributors shall not be liable for any loss, injury, or damage arising from the use of — or reliance on — information provided on this website. Your engagement with our content is always at your own discretion.</p>
+        </div>
+
+        <div class="card">
+            <h2>Copyright & fair use</h2>
+            <p>All original text, imagery, and design on this site are the property of Fairmoss Thorn Pavilion, unless otherwise noted. You may share excerpts with attribution, but please do not reproduce entire works without permission.</p>
+            <ul>
+                <li>For permission requests, please <a href="contact.html" style="color:#D4A373; font-weight:500;">reach out to the Pavilion</a>.</li>
+                <li>We respect the intellectual property of others — if you believe any material on this site infringes on your rights, please contact us and we will address it promptly.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Changes to this disclaimer</h2>
+            <p>We may update this disclaimer occasionally to reflect changes in practice or regulation. When we do, we will revise the date below. We encourage you to review it from time to time.</p>
+            <p class="small-print">Last revised: April 2026 · Fairmoss Thorn Pavilion</p>
+        </div>
+    </div>
+
+    <!-- Footer (consistent) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-principles">
+                <a href="#">Read the Fairmoss Principles</a>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Pavilion</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Fairmoss Thorn Pavilion</span>
+                <span>Editorial Policy</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

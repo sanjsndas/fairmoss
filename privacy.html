@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Privacy · Fairmoss Thorn Pavilion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet" />
+    <style>
+        /* ---------- Reset & Base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8F5F0;
+            color: #1E352F;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Fraunces", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ---------- Navigation ---------- */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(30, 53, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+        }
+        .nav-logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            font-weight: 450;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4A373;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #D4A373;
+        }
+        .nav-links a[aria-current="page"] {
+            color: #D4A373;
+        }
+        .nav-links a[aria-current="page"]::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: #D4A373;
+            color: #1E352F;
+            padding: 0.5rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .nav-cta:hover::after {
+            width: 0 !important;
+        }
+
+        /* ---------- Mobile nav toggle (accessibility) ---------- */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #F8F5F0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(30, 53, 47, 0.98);
+                padding: 1.5rem 2rem;
+                gap: 1.2rem;
+                backdrop-filter: blur(12px);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
+        /* ---------- Terms Hero ---------- */
+        .terms-hero {
+            margin-top: 80px;
+            background: #1E352F;
+            padding: 4rem 0 3rem;
+            color: #F8F5F0;
+        }
+        .terms-hero h1 {
+            font-size: clamp(2.4rem, 6vw, 3.4rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        .terms-hero h1 em {
+            color: #D4A373;
+            font-style: italic;
+        }
+        .terms-hero .sub {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            max-width: 600px;
+            margin-top: 0.8rem;
+        }
+
+        /* ---------- Terms Content ---------- */
+        .terms-content {
+            padding: 4rem 0;
+        }
+        .terms-content .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(30, 53, 47, 0.04);
+            transition: box-shadow 0.3s;
+        }
+        .terms-content .card:hover {
+            box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.12);
+        }
+        .terms-content .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            border-bottom: 1px solid #e8e0d8;
+            padding-bottom: 0.5rem;
+        }
+        .terms-content .card h2 span {
+            color: #9C7A64;
+            font-weight: 300;
+        }
+        .terms-content .card p {
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+        .terms-content .card ul {
+            list-style: none;
+            margin: 1.2rem 0 0.5rem;
+        }
+        .terms-content .card ul li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+            opacity: 0.85;
+        }
+        .terms-content .card ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #D4A373;
+        }
+        .terms-content .card .highlight {
+            background: #F0EBE4;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 0.6rem;
+            color: #1E352F;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .terms-grid .card {
+            margin-bottom: 0;
+        }
+
+        /* ---------- Garden Shed (newsletter) ---------- */
+        .garden-shed {
+            background: #2b423a;
+            padding: 3rem 0;
+            color: #F8F5F0;
+        }
+        .shed-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .shed-grid h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+        }
+        .shed-grid p {
+            opacity: 0.75;
+            margin: 0.5rem 0 1.5rem;
+            max-width: 80%;
+        }
+        .shed-grid form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .shed-grid input {
+            padding: 0.8rem 1.2rem;
+            border: 0;
+            border-radius: 40px;
+            flex: 1 1 200px;
+            background: #F8F5F0;
+            color: #1E352F;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .shed-grid input:focus {
+            outline: 2px solid #D4A373;
+        }
+        .shed-grid button {
+            background: #D4A373;
+            border: 0;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #1E352F;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .shed-grid button:hover {
+            background: #b88a5e;
+            color: #fff;
+        }
+        .shed-tools {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .shed-tools span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.6;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            padding-bottom: 4px;
+        }
+
+        /* ---------- Footer ---------- */
+        .site-footer {
+            background: #14241f;
+            color: #a8b8b0;
+            padding: 3rem 0 2rem;
+        }
+        .footer-principles {
+            padding: 2rem 0 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+        .footer-principles a {
+            font-family: "Fraunces", serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #F8F5F0;
+            letter-spacing: -0.02em;
+            transition: color 0.2s;
+        }
+        .footer-principles a:hover {
+            color: #D4A373;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding-top: 2.5rem;
+            font-size: 0.8rem;
+        }
+        .footer-links h4 {
+            color: #F8F5F0;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-links ul li a {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: #D4A373;
+        }
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            opacity: 0.4;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+            .shed-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+            .terms-content .card {
+                padding: 1.8rem;
+            }
+            .shed-grid input {
+                flex: 1 1 100%;
+            }
+            .shed-grid p {
+                max-width: 100%;
+            }
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .shed-tools {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-logo">Fairmoss Thorn Pavillion<span>.</span></div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" role="menubar">
+            <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+            <li role="none"><a href="about.html" role="menuitem">About</a></li>
+            <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            <li role="none"><a href="terms.html" role="menuitem" aria-current="page">Terms Of Privacy</a></li>
+            <li role="none"><a href="privacy.html" role="menuitem">Privacy Policy</a></li>
+            <li role="none"><a href="cookies.html" role="menuitem">Cookies Policy</a></li>
+            <li role="none"><a href="categories.html" role="menuitem">CATEGORIES</a></li>
+            <li role="none"><a href="disclamier.html" role="menuitem">DISCLAMIER</a></li>
+        </ul>
+    </nav>
+
+    <!-- Terms Hero -->
+    <section class="terms-hero" aria-labelledby="terms-title">
+        <div class="container">
+            <h1 id="terms-title">Terms of <em>Privacy</em></h1>
+            <p class="sub">How we tend to your data with the same care we give to our gardens — transparent, respectful, and always in season.</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <main class="terms-content">
+        <div class="container">
+
+            <article class="card">
+                <h2><span>01.</span> Information we collect</h2>
+                <p>Fairmoss Thorn Pavilion collects only the data necessary to cultivate a meaningful experience. This may include:</p>
+                <ul>
+                    <li>Email address (for newsletters and occasional field notes)</li>
+                    <li>Usage data (pages visited, time spent — anonymized)</li>
+                    <li>Optional preferences (favourite plant families, gardening zones)</li>
+                </ul>
+                <p>We never sell or trade your information. It remains rooted in our care, just like a prized perennial.</p>
+                <span class="highlight">🌿 Data minimisation is our practice.</span>
+            </article>
+
+            <div class="terms-grid">
+                <article class="card">
+                    <h2><span>02.</span> How we use it</h2>
+                    <p>Your data helps us improve content, send relevant guides, and understand what our community values most. We use it for:</p>
+                    <ul>
+                        <li>Sending seasonal gardening tips and updates</li>
+                        <li>Improving the Pavilion's layout and features</li>
+                        <li>Occasional surveys to better serve growers</li>
+                    </ul>
+                    <p>You can unsubscribe at any time — no hard feelings, only gratitude.</p>
+                </article>
+
+                <article class="card">
+                    <h2><span>03.</span> Your rights &amp; choices</h2>
+                    <p>We believe in digital sovereignty. You have the right to:</p>
+                    <ul>
+                        <li>Access the data we hold about you</li>
+                        <li>Request correction or deletion</li>
+                        <li>Withdraw consent at any moment</li>
+                    </ul>
+                    <p>For any request, reach out via the <a href="contact.html" style="color:#D4A373; text-decoration: underline;">contact page</a> — we respond within 7 days.</p>
+                </article>
+            </div>
+
+            <article class="card" style="margin-top: 2rem;">
+                <h2><span>04.</span> Data security &amp; third parties</h2>
+                <p>We use industry-standard encryption and store data on secure, EU-based servers. We never share your information with third parties for marketing purposes. Our only partners are trusted service providers (e.g., email delivery) who are bound by strict confidentiality agreements.</p>
+                <p>Like a well-built compost heap, our system is monitored regularly to ensure it stays healthy and secure.</p>
+                <span class="highlight">🔒 SSL encrypted · reviewed quarterly</span>
+            </article>
+
+            <article class="card" style="background: #F0EBE4; border: 1px solid #d4c9bc;">
+                <h2><span>05.</span> Updates to this policy</h2>
+                <p>We review this policy every spring, in line with the growing season. Any changes will be clearly communicated via our newsletter and on this page. Last updated: <strong>April 2026</strong>.</p>
+                <p style="margin-top: 0.6rem; font-size: 0.9rem;">If you have any questions, please write to us at <span style="color:#9C7A64;">privacy@fairmossthorn.com</span> — we'd love to hear from you.</p>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Garden Shed (newsletter) -->
+    <section class="garden-shed" aria-labelledby="shed-title">
+        <div class="container">
+            <div class="shed-grid">
+                <div>
+                    <h2 id="shed-title">Stay rooted</h2>
+                    <p>Subscribe to our weekly letter: field notes, seasonal guides, and quiet musings from the pavilion.</p>
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div class="shed-tools">
+                    <span>📋 Guides</span>
+                    <span>📊 Charts</span>
+                    <span>📅 Planner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-principles">
+                <a href="#">Read the Fairmoss Principles</a>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Pavilion</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Archive</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Glossary</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2025 Fairmoss Thorn Pavilion</span>
+                <span>Editorial Policy</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile nav toggle script -->
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true' ? false : true;
+            toggle.setAttribute('aria-expanded', expanded);
+            navLinks.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
